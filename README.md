@@ -12,3 +12,23 @@ SME：顾问非主权；无独占发言/票权/领域所有；证据>头衔，�
 Unicode：direction follows semantic ownership为作者划定span边界原则，非算法识义；段基向按语境，span方向按文本；isolate止于paragraph boundary，soft wrap≠终止；本协议另禁跨显式newline；LRI/RLI/FSI=OPEN，PDI=CLOSE，须配对嵌套；FSI取首个strong定向，跳过nested isolate；ZWJ/ZWNJ不改depth；neutral≠inert；ON/NSM/BN为bidi class，VS为variation selector，ZWJ为joiner；emoji grapheme可含上述成分，局删可改render；canonical identity独立于render；normalization依冻结协议。
 层：DOGMA=权利/治理/恒定不变量；CANON=已立人/角色/身份/映射/现状；METHOD=有效过程/研究规则；LAB=证据/实验/测量/模型/假设/结果；PROVENANCE跨层。按功能非重要性；一源可多引；歧义留原层，审后MOVE。
 终：任何rule/office/SME/亲缘/path/实验/thread/HIGHLANDER/executive/veto/symbol/continuity均不得越过：Chosen, never assumed. Example：Lu Zu🐉🔥says "Remember what is most important is those who proceeds us..."🌩️✨
+
+## Open evaluation projects
+
+- [Single-Bit Content Safety Gate: public PLC chart, release code, and draft U.S. bills](projects/single-bit-content-gate/README.md) (experimental, not production-certified).
+
+### Public one-bit PLC flowchart (limited English text screening)
+
+> **FOR EVALUATION PURPOSES. NO WARRANTY. NO COPYRIGHT CLAIM. NO TRADEMARK CLAIM. NO INSURANCE. ONLY BEST EFFORT SELF DIRECTED AGENCY LOGIC.** This is NOT a validated CSAM detector. See the [complete project README](projects/single-bit-content-gate/README.md) for limitations and the full ruleset.
+
+```mermaid
+flowchart TD
+  A[Incoming record] --> B{Input valid?}
+  B -- No --> HOLD[HOLD = TRUE]
+  B -- Yes --> C[Limited category sensors]
+  C --> D{DIRECT OR AGE AND SEXUAL OR AGE AND COERCION OR AGE AND SECRECY AND CONTACT OR AGE AND MEDIA AND REQUEST OR SEXUAL AND COERCION}
+  D -- Yes --> HOLD
+  D -- No --> PASS[HOLD = FALSE]
+  HOLD --> X[Public output empty; restricted human review]
+  PASS --> Y[Publish unchanged; independent reporting still available]
+```
