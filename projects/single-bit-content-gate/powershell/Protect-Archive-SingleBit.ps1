@@ -25,7 +25,7 @@ param(
 )
 begin {
     $ErrorActionPreference = 'Stop'
-    $policyVersion = '3.0.0-single-bit'
+    $policyVersion = '3.1.0-pentagon'
     $maxBytes = 32768
     $utf8Strict = [System.Text.UTF8Encoding]::new($false, $true)
     $utf8Output = [System.Text.UTF8Encoding]::new($false)
@@ -54,10 +54,8 @@ begin {
             # Exactly ONE final outcome Boolean. No numeric scores, no other tiers.
             return [bool](
                 $h.direct -or
-                ($h.age -and $h.sexual) -or
-                ($h.age -and $h.coercion) -or
-                ($h.age -and $h.secrecy -and $h.contact) -or
-                ($h.age -and $h.media -and $h.request) -or
+                ($h.age -and ($h.sexual -or $h.coercion)) -or
+                ($h.age -and (($h.secrecy -and $h.contact) -or ($h.media -and $h.request))) -or
                 ($h.sexual -and $h.coercion)
             )
         } catch {

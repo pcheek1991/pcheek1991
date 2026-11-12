@@ -33,7 +33,7 @@ function queueRestrictedOriginal(string $id, string $original): void {
     $ciphertext = openssl_encrypt($original, 'aes-256-gcm', $key, OPENSSL_RAW_DATA, $nonce, $tag);
     if ($ciphertext === false) throw new RuntimeException('Encryption failure');
     $doc = json_encode([
-        'id' => $id, 'policy_version' => '3.0.0-single-bit',
+        'id' => $id, 'policy_version' => '3.1.0-pentagon',
         'nonce' => base64_encode($nonce), 'tag' => base64_encode($tag),
         'ciphertext' => base64_encode($ciphertext)
     ], JSON_THROW_ON_ERROR);

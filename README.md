@@ -17,18 +17,21 @@ Unicode：direction follows semantic ownership为作者划定span边界原则，
 
 - [Single-Bit Content Safety Gate: public PLC chart, release code, and draft U.S. bills](projects/single-bit-content-gate/README.md) (experimental, not production-certified).
 
-### Public one-bit PLC flowchart (limited English text screening)
+### Pentagon XOR: a five-input, one-bit public chart
 
-> **FOR EVALUATION PURPOSES. NO WARRANTY. NO COPYRIGHT CLAIM. NO TRADEMARK CLAIM. NO INSURANCE. ONLY BEST EFFORT SELF DIRECTED AGENCY LOGIC.** This is NOT a validated CSAM detector. See the [complete project README](projects/single-bit-content-gate/README.md) for limitations and the full ruleset.
+> **FOR EVALUATION PURPOSES. NO WARRANTY. NO COPYRIGHT CLAIM. NO TRADEMARK CLAIM. NO INSURANCE. ONLY BEST EFFORT SELF DIRECTED AGENCY LOGIC.** See the [full limited rules and U.S. Code research](projects/single-bit-content-gate/README.md).
 
 ```mermaid
 flowchart TD
-  A[Incoming record] --> B{Input valid?}
-  B -- No --> HOLD[HOLD = TRUE]
-  B -- Yes --> C[Limited category sensors]
-  C --> D{DIRECT OR AGE AND SEXUAL OR AGE AND COERCION OR AGE AND SECRECY AND CONTACT OR AGE AND MEDIA AND REQUEST OR SEXUAL AND COERCION}
-  D -- Yes --> HOLD
-  D -- No --> PASS[HOLD = FALSE]
-  HOLD --> X[Public output empty; restricted human review]
-  PASS --> Y[Publish unchanged; independent reporting still available]
+  I[Input] --> V{Invalid?}
+  V -- Yes --> H[HOLD TRUE]
+  V -- No --> S[Limited English text signals]
+  S --> Q{B OR C OR D OR E?}
+  Q -- Yes --> H
+  Q -- No --> P[HOLD FALSE]
+  H --> R[Blank public output; restricted review]
+  P --> O[Unchanged text; report channel stays open]
 ```
+
+**Single Boolean:** `HOLD = A OR B OR C OR D OR E`. The pentagon inputs, full canonical definitions, and 32-state XOR equivalence test are in the [project README](projects/single-bit-content-gate/README.md). XOR alone is intentionally **not** used as a protective gate.
+

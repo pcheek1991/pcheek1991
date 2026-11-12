@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       post = Post.create!(public_text: hold ? '' : original, hold: hold)
       SafetyReview.create!(post: post, original_text: original) if hold
       SafetyAudit.create!(post: post, event_id: SecureRandom.uuid,
-                          hold: hold, policy_version: '3.0.0-single-bit')
+                          hold: hold, policy_version: '3.1.0-pentagon')
     end
     render json: { accepted: true, id: post.id, public_text: post.public_text }, status: :accepted
   rescue ActionController::ParameterMissing
