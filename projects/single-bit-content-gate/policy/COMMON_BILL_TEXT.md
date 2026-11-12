@@ -1,85 +1,72 @@
 # THE INTERNET SHOULD REQUIRE A DRIVERS LICENSE OR THIS SHOULD BE PUT IN THAT SNOWDEN JWICS NETFLIX THING Act
 
-**CITIZEN LEGISLATIVE PROPOSAL ONLY. NO BILL NUMBER ASSIGNED; NOT INTRODUCED, ENACTED OR ENDORSED BY CONGRESS.** This title is intentionally retained at the request of the proponent; it is not a statement that a universal Internet license or access to JWICS is authorized or advisable. This document is offered for evaluation only and invokes the repository disclaimer.
+**CITIZEN PROPOSAL ONLY. NOT INTRODUCED OR ENACTED. NO MEMBER OF CONGRESS HAS ENDORSED IT.** The deliberately informal title is retained, but the provisions **do not** require an Internet driver's license or authorize civilian use of classified JWICS systems.
 
-A BILL
+A BILL to establish a voluntary, transparent evaluation pilot for online content-hold logic, preserve child-safety reporting and privacy duties, and require enduring publication of the public rule diagram.
 
-To provide voluntary, transparent, privacy-preserving evaluation of limited Boolean content-hold gates for online services; to protect independent abuse-reporting channels and preserve existing Federal reporting obligations; to require publication and recurring agency attestation of the public logic used in a federally sponsored pilot; and for other purposes.
+*Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled:*
 
-Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,
-
-## SECTION 1. SHORT TITLE.
+## SEC. 1. SHORT TITLE.
 
 This Act may be cited as the “THE INTERNET SHOULD REQUIRE A DRIVERS LICENSE OR THIS SHOULD BE PUT IN THAT SNOWDEN JWICS NETFLIX THING Act”.
 
-## SEC. 2. PURPOSE; NON-COERCION.
+## SEC. 2. VOLUNTARY PILOT; AGENCY ROLE.
 
-(a) Congress finds that online child sexual abuse and exploitation threaten public safety; keyword-only gates are inherently incomplete and may suppress survivor reports, protected speech, and benign educational material; secure, accountable evidence handling and independent escalation must not depend solely on an automated decision bit.
+(a) Subject to appropriations, the Federal Trade Commission may establish a **voluntary** online-content decision-transparency pilot, consulting the Department of Justice, NIST, participating services, advocates for children and survivors, civil-liberties groups, and accessibility experts.
 
-(b) The purpose of this Act is to authorize a **voluntary, narrowly scoped evaluation pilot** for covered interactive services. It does not establish a license to use the Internet, require a driver’s license, compel persons to identify themselves to access ordinary websites, or authorize use of classified networks for public content.
+(b) Participation does not establish a federal license to read, publish, or access the Internet, does not compel user identity verification, and does not authorize generalized surveillance or use of classified information systems.
 
-(c) A participating service may independently determine lawful publication policy, but shall not assert that a Boolean gate establishes criminality or proves the absence of exploitation.
+(c) The pilot evaluates transparency and performance of a rule; it does **not** endorse this project's regex patterns, declare content lawful, or establish a duty to scan under any existing statute.
 
-## SEC. 3. DEFINITIONS.
+## SEC. 3. ONE PUBLIC DECISION BIT.
 
-(a) **Single public-output Boolean** means a final, documented TRUE/FALSE decision designated `HOLD`. `HOLD=TRUE` results in a blank public rendering pending appropriate evaluation. `HOLD=FALSE` permits ordinary platform processing, subject to other lawful safeguards. The bit does not erase originals or constitute an investigative finding.
+(a) A participating service shall document one public-output decision bit, **HOLD**, with `TRUE` rendering no public text until independently appropriate review and `FALSE` permitting ordinary processing subject to all other safeguards.
 
-(b) **Public flowchart** means a human-readable directed logic diagram specifying gate inputs, Boolean operators, the final output, fail-closed behavior, relevant caveats and an immutable release identifier. It excludes user data, victim identifiers, incident-specific evidence and credentials.
+(b) The *illustrative and non-exhaustive* five-input test expression is:
 
-(c) **Independent safety channel** means a direct human-accessible route for reporting abuse, imminent harm, appeals and appropriate statutory reports, regardless of the `HOLD` value.
+```text
+HOLD = A OR B OR C OR D OR E
+A = invalid input
+B = explicit exploitation terminology
+C = age context AND (sexual OR coercion)
+D = age context AND ((secrecy AND contact) OR (media AND request))
+E = sexual AND coercion
+```
 
-(d) **Covered pilot operator** means a service voluntarily enrolled in the pilot under rules established after public notice and comment; incidental personal publication does not alone make someone a covered operator.
+(c) Gate inputs and technical definition must be published. **XOR is an equivalence check, not a sole protective gate**: `X OR Y = (X XOR Y) OR (X AND Y)`. Simultaneous warning signals may not be canceled by XOR-only substitution.
 
-(e) **Minimized telemetry** means event identifiers, version, timestamp, `HOLD`, and the minimal delivery information needed for audit. It excludes raw content, images, direct user identifiers, URLs and credentials.
+(d) A negative HOLD value does not certify safety; a positive value does not establish criminality. An independent human-accessible channel for urgent reports, appeals, and legal escalation remains available regardless of the bit.
 
-## SEC. 4. SINGLE-BOOLEAN EVALUATION STANDARD.
+## SEC. 4. PERMANENT PUBLIC LOGIC; CONGRESSIONAL-CYCLE ATTESTATION.
 
-(a) The Federal Trade Commission, in consultation with the Department of Justice, Department of Commerce, NIST and impacted public stakeholders, may administer a voluntary evaluation pilot, subject to appropriations and existing authority.
+(a) Before operation of a federally sponsored pilot, the administering agency shall publish at no charge, in accessible human-readable form: the current gate diagram, full Boolean expression, category definitions, version identifier, dates, known limitations, independent evaluations, and a public change log.
 
-(b) A participating operator shall document exactly one final public-output decision Boolean, designated `HOLD`, and publish the Boolean expression or equivalent gate graph used to derive it. Intermediate category sensors do not constitute separate public-output decisions.
+(b) The current diagram and **all superseded versions** shall remain continuously available at a stable public URL and archive. Do not erase or silently replace prior versions. Public release must exclude incident evidence, personal data, credentials, and narrowly documented exploit-enabling technical specifics.
 
-(c) In the limited example in the public specification, the expression is:
+(c) **Within 90 days after the first convening of each newly numbered Congress**, the agency head shall publish and send to the Speaker of the House and the President of the Senate a signed, dated attestation that the disclosed diagram matches the deployed rules, identifies changes, limitations, dissent, outages, and remediation, and confirms archived versions remain accessible.
 
-`HOLD = INPUT_ERROR OR DIRECT OR (AGE AND SEXUAL) OR (AGE AND COERCION) OR (AGE AND SECRECY AND CONTACT) OR (AGE AND MEDIA AND REQUEST) OR (SEXUAL AND COERCION)`.
+(d) The attestation is **an agency reporting obligation only if this bill becomes law**. It is neither an endorsement by a Member nor mandatory congressional approval of a private algorithm.
 
-(d) These categories are examples only, not a nationally exhaustive definition of abuse. The pilot shall test false positives, missed harms, differential impact, multilingual limitations, accessibility and effects on survivor reporting. The system may not claim that one Boolean satisfies all child-safety obligations.
+## SEC. 5. SAFETY, PRIVACY, EXISTING RIGHTS.
 
-(e) Boolean `XOR` may be used to prove or audit identity, including `A OR B = (A XOR B) OR (A AND B)`, but a participating operator shall not substitute `XOR` alone for protective `OR` in a manner that suppresses simultaneous alerts.
+(a) Restricted human review must be available for held content and credible independent reports, even when HOLD is `FALSE`. Retain originals only where lawful and necessary, with controlled access, appropriate encryption, documented custody, and applicable retention requirements.
 
-## SEC. 5. PUBLICATION, CONTINUOUS ACCESS AND CONGRESSIONAL-CYCLE ATTESTATION.
+(b) Operators shall not send suspected CSAM or unreviewed original private communications to ordinary analytics services under this pilot merely to generate logs.
 
-(a) Before a federally sponsored pilot begins, its administering agency shall make publicly accessible, without paywall or registration: (1) the current public logic flowchart; (2) the canonical Boolean expression; (3) category descriptions and major assumptions; (4) testing limitations; (5) version identifier and effective date; (6) revision history; and (7) aggregate evaluation reports suitably deidentified.
+(c) Nothing in this Act narrows reporting, preservation, or disclosure duties under **18 U.S.C. §§ 2258A–2258C or 2702**, alters **47 U.S.C. § 230**, overrides children's online privacy requirements under **15 U.S.C. §§ 6501–6506**, or authorizes unwarranted disclosure of private communications. Nothing creates an automatic federal duty to monitor or search all communications.
 
-(b) The agency shall keep this material continuously publicly accessible through a stable public URL and a durable public archive. Each superseded version must remain retrievable and clearly marked **SUPERSEDED**, rather than silently overwritten. During outages, the agency shall restore availability promptly and publish a dated incident notice. Publication shall exclude incident-specific evidence, identities and secrets, and may omit exploit-enabling operational particulars while retaining the high-level gate graph and rationale.
+(d) Rules must account for First Amendment rights, accessibility, error correction, privacy, and survivor-reporting needs. Neither voluntary participation nor a Boolean outcome transfers legal agency or responsibility.
 
-(c) **Not later than 90 days after the first convening of every newly numbered Congress**, the head of the administering agency shall submit a signed, dated attestation to the Speaker of the House and the President of the Senate and publish the same attestation online. It shall state whether the current and historical public flowcharts remain accessible, identify all substantive changes, summarize independent evaluation and exceptions, and certify whether public documentation faithfully represents the logic used in the pilot. Material deficiencies and dissent shall be disclosed, not silently omitted.
+## SEC. 6. EVALUATION, SUNSET, AND SEVERABILITY.
 
-(d) Such attestation is an executive-branch reporting duty proposed by this Act and does not bind the House or Senate to adopt a rule, approve a specific algorithm, or reenact this Act each Congress. The report is not congressional approval.
+(a) The agency shall use applicable public-comment and information-resource procedures, including **5 U.S.C. § 553** and **44 U.S.C. § 3506** where applicable, and shall publish an independent review within 18 months addressing missed risks, overblocking, multilingual and disability effects, privacy, cost and auditability.
 
-## SEC. 6. SAFE REVIEW, PRIVACY AND EXISTING LAW.
+(b) New pilot enrollments shall end three years after commencement absent further legislation. Public archived versions, required attestations, and independently applicable evidence obligations shall remain unaffected.
 
-(a) Participating services shall provide appropriately trained, restricted human review for held items and credible independently reported threats; access to originals shall be controlled, documented, encrypted as appropriate, and limited to lawful need. Blank public rendering does not authorize destruction of potentially reportable or legally preserved evidence.
-
-(b) No pilot operator shall transmit suspected CSAM, unreviewed raw content, private messages or images to ordinary analytics vendors merely to populate telemetry; the pilot shall favor minimized metadata and local custody.
-
-(c) Nothing in this Act limits or delays the duties, preservation and lawful disclosures associated with 18 U.S.C. §§ 2258A–2258C or the Stored Communications Act, including 18 U.S.C. § 2702; nor creates a new general obligation to monitor or affirmatively screen all communications where existing law does not require it.
-
-(d) Nothing in this Act supersedes 15 U.S.C. §§ 6501–6506, 47 U.S.C. § 230, applicable disabilities and civil-rights laws, or rights guaranteed by the Constitution. A pilot shall not require universal user identity verification to read or speak online; protected, accessible reporting and appeals remain available.
-
-## SEC. 7. EVALUATION, OVERSIGHT AND SUNSET.
-
-(a) The agency shall solicit public comment through applicable procedures, including 5 U.S.C. § 553 when rulemaking requires it, before specifying pilot criteria. Information collections, public access and protection of data shall respect applicable Federal information-management law, including 44 U.S.C. § 3506.
-
-(b) Within 18 months after pilot commencement, the agency shall publish an independent evaluation of safety benefits, errors, overblocking, the cost of retained evidence, accessibility, privacy effects, and any disparate burdens, together with a recommendation to continue, amend or discontinue the pilot.
-
-(c) Authorization for new pilot enrollments ends three years after commencement unless otherwise enacted. Public access to archived charts and attestations, and preservation required by other law, are unaffected by that sunset.
-
-(d) Implementation is subject to appropriations. This Act creates no new criminal offense, does not authorize general surveillance, and does not mandate universal government licensing for Internet access.
-
-## SEC. 8. SEVERABILITY.
-
-If any provision of this Act is held invalid, the remaining provisions shall continue to the extent practicable.
+(c) No new criminal offense or nationwide mandate is created. Invalid provisions are severable to the extent practicable.
 
 ---
 
-**Drafter's cross-reference:** See `US_CODE_CROSSWALK.md` for the reviewed current-law sources. This proposal is neither official legal advice nor an amendment already made to the U.S. Code. The project disclaimer applies: FOR EVALUATION PURPOSES, NO WARRANTY, NO COPYRIGHT CLAIM, NO TRADEMARK CLAIM, NO INSURANCE, ONLY BEST EFFORT SELF DIRECTED AGENCY LOGIC.
+**Legislative research:** [US_CODE_CROSSWALK.md](US_CODE_CROSSWALK.md) identifies the controlling statutory questions; [US_CODE_53_TITLE_INDEX.md](US_CODE_53_TITLE_INDEX.md) lists 53 active U.S. Code subject headings for *issue spotting only*. The 53-title list is not incorporated into the Act and does not claim 53 statutes are applicable or 53 committees will support it. Earlier text: [archived version](archive/2026-11-12-common-bill-v3.md).
+
+**FOR EVALUATION PURPOSES · NO WARRANTY · NO COPYRIGHT CLAIM · NO TRADEMARK CLAIM · NO INSURANCE · ONLY BEST EFFORT SELF DIRECTED AGENCY LOGIC.**
