@@ -41,11 +41,12 @@ final class SingleBitGate
                 if ($matched === false) return true;
                 $h[$name] = ($matched === 1);
             }
+            // Pentagonal OR comb: one output. INPUT_ERROR is handled above.
+            // XOR is checked exhaustively in tests, not placed in the release gate.
             return $h['direct']
-                || ($h['age'] && $h['sexual'])
-                || ($h['age'] && $h['coercion'])
-                || ($h['age'] && $h['secrecy'] && $h['contact'])
-                || ($h['age'] && $h['media'] && $h['request'])
+                || ($h['age'] && ($h['sexual'] || $h['coercion']))
+                || ($h['age'] && (($h['secrecy'] && $h['contact'])
+                    || ($h['media'] && $h['request'])))
                 || ($h['sexual'] && $h['coercion']);
         } catch (\Throwable $e) {
             return true;
