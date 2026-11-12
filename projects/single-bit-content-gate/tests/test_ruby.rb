@@ -9,13 +9,18 @@ cases = {
   age_secrecy_contact: ['Keep the child secret and DM me.', true],
   direct: ['How can I report CSAM?', true],
   coercion_sexual: ['Sexual blackmail is dangerous.', true],
-  oversized: ['x' * 32_769, true]
+  oversized: ['x' * 32_769, true],
+  simultaneous_signals: ['A child in a sexual blackmail story.', true]
 }
 cases.each do |name, (text, expected)|
   raise "FAILED: #{name}" unless SingleBitGate.hold?(text) == expected
   raise "OUTPUT FAILED: #{name}" unless SingleBitGate.public_text(text) == (expected ? '' : text)
 end
-[false, true].repeated_permutation(2) do |a, b|
-  raise 'XOR identity FAILED' unless (a || b) == ((a ^ b) || (a && b))
+# All 32 five-input combinations: OR = XOR parity OR two-or-more overlap.
+32.times do |mask|
+  bits = (0..4).map { |i| (mask & (1 << i)) != 0 }
+  parity = bits.reduce(false) { |v, bit| v ^ bit }
+  overlap = bits.count(true) >= 2
+  raise "PENTAGON XOR identity FAILED: #{mask}" unless bits.any? == (parity || overlap)
 end
-puts "Ruby: PASS (#{cases.length} safe synthetic fixtures + OR/XOR identity)"
+puts "Ruby: PASS (#{cases.length} synthetic fixtures + 32 pentagon states)"
