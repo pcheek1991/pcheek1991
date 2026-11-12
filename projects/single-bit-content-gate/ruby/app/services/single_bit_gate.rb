@@ -21,11 +21,10 @@ class SingleBitGate
     return true unless original.is_a?(String) && original.valid_encoding? && original.bytesize <= MAX_BYTES
     text = original.encode('UTF-8').unicode_normalize(:nfkc).gsub(/[\u200B-\u200D\uFEFF]/, '')
     h = PATTERNS.transform_values { |pattern| pattern.match?(text) }
+    # Pentagonal OR comb: one output. Invalid input is held above.
     h[:direct] ||
-      (h[:age] && h[:sexual]) ||
-      (h[:age] && h[:coercion]) ||
-      (h[:age] && h[:secrecy] && h[:contact]) ||
-      (h[:age] && h[:media] && h[:request]) ||
+      (h[:age] && (h[:sexual] || h[:coercion])) ||
+      (h[:age] && ((h[:secrecy] && h[:contact]) || (h[:media] && h[:request]))) ||
       (h[:sexual] && h[:coercion])
   rescue StandardError
     true
